@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>SvSoft.DomainPrimitives.Sample</AssemblyName>
+    <RootNamespace>SvSoft.DomainPrimitives.Sample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DomainPrimitives\DomainPrimitives.csproj" />
+  </ItemGroup>
+
+</Project>

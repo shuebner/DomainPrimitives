@@ -18,7 +18,7 @@ namespace SvSoft.DomainPrimitives
             Equals(Value, ((KindOf<T>)obj).Value);
 
         public override int GetHashCode() =>
-            GetType().GetHashCode() * 31 + Value.GetHashCode();
+            HashCode.Combine(GetType(), Value);
 
         public static implicit operator T(KindOf<T> kindOfT) => kindOfT.Value;
     }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainPrimitives", "DomainP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainPrimitives.UnitTests", "DomainPrimitives.UnitTests\DomainPrimitives.UnitTests.csproj", "{0711B276-3ED5-4DD3-BC29-FE588D414E2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainPrimitives.Sample", "DomainPrimitives.Sample\DomainPrimitives.Sample.csproj", "{5A3216C6-0FE6-4B1A-98D3-F5B919ADFB1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0711B276-3ED5-4DD3-BC29-FE588D414E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0711B276-3ED5-4DD3-BC29-FE588D414E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0711B276-3ED5-4DD3-BC29-FE588D414E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3216C6-0FE6-4B1A-98D3-F5B919ADFB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3216C6-0FE6-4B1A-98D3-F5B919ADFB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3216C6-0FE6-4B1A-98D3-F5B919ADFB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3216C6-0FE6-4B1A-98D3-F5B919ADFB1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
