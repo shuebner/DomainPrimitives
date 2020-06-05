@@ -101,6 +101,20 @@ namespace SvSoft.DomainPrimitives
             john1Hash.Should().NotBe(john2Hash);
         }
 
+        [Fact]
+        public void ToString_When_underlying_type_is_string_is_equivalent_to_underlying_value()
+        {
+            new FirstName("John").ToString().Should().Be("John");
+        }
+
+        [Fact]
+        public void When_used_as_string_is_equivalent_to_underlying_value()
+        {
+            FirstName firstName = new FirstName("John");
+
+            $"{firstName}".Should().Be("John");
+        }
+
         private class FirstName : KindOf<string>
         {
             public FirstName(string value)

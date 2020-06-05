@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace SvSoft.DomainPrimitives
 {
+    [DebuggerDisplay("{Value} ({this.GetType().Name})")]
     public abstract class KindOf<T>
         where T : class
     {
@@ -19,6 +21,8 @@ namespace SvSoft.DomainPrimitives
 
         public override int GetHashCode() =>
             HashCode.Combine(GetType(), Value);
+
+        public override string ToString() => Value.ToString();
 
         public static implicit operator T(KindOf<T> kindOfT) => kindOfT.Value;
     }
