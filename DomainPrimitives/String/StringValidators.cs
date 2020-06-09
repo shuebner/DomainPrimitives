@@ -23,6 +23,6 @@ namespace SvSoft.DomainPrimitives
         public static StringValidator From(Func<string, bool> isValid, string invalidMessage) =>
             str => isValid(str)
                 ? ValidationResult.Success<string>()
-                : ValidationResult.Error(invalidMessage, str);
+                : ValidationResult.Failure(invalidMessage, str);
     }
 }

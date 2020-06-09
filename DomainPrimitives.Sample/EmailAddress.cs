@@ -1,12 +1,18 @@
-﻿using System;
+﻿using SvSoft.DomainPrimitives;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace SvSoft.DomainPrimitives.Sample
+namespace DomainPrimitives.Sample
 {
     public sealed class EmailAddress : KindOfString
     {
+        public static CreationResult<EmailAddress> Create(string emailAddress)
+        {
+            return new CreationResult<EmailAddress>.Success(new EmailAddress(emailAddress));
+        }
+
         public EmailAddress(string value)
             : base(value,
                     Validators.AllOf(

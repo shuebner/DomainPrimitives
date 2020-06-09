@@ -6,10 +6,10 @@ namespace SvSoft.DomainPrimitives
 {
     public class ValidationResult
     {
-        public static ValidationResult<T> Success<T>() => new ValidationResult<T>.SuccessResult();
+        public static ValidationResult<T> Success<T>() => new ValidationResult<T>.Success();
 
-        public static ValidationResult<T> Error<T>(string errorMessage, T invalidValue) =>
-            new ValidationResult<T>.ErrorResult(errorMessage, invalidValue);
+        public static ValidationResult<T> Failure<T>(string errorMessage, T invalidValue) =>
+            new ValidationResult<T>.Failure(errorMessage, invalidValue);
     }
 
     public abstract class ValidationResult<T>
@@ -18,21 +18,21 @@ namespace SvSoft.DomainPrimitives
         {
         }
 
-        public class SuccessResult
+        public sealed class Success
             : ValidationResult<T>
         {
-            internal SuccessResult()
+            public Success()
             {
             }
         }
 
-        public class ErrorResult
+        public sealed class Failure
             : ValidationResult<T>
         {
             public readonly string ErrorMessage;
             public readonly T OriginalValue;
 
-            internal ErrorResult(string errorMessage, T invalidValue)
+            public Failure(string errorMessage, T invalidValue)
             {
                 ErrorMessage = errorMessage;
                 OriginalValue = invalidValue;

@@ -1,13 +1,13 @@
-﻿using SvSoft.DomainPrimitives.Sample;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DomainPrimitives.Sample
+﻿namespace DomainPrimitives.Sample
 {
     public class Person
     {
-        public Person(Name name, EmailAddress email)
+        public static CreationResult<Person> Create(Name name, EmailAddress emailAddress)
+        {
+            return new CreationResult<Person>.Success(new Person(name, emailAddress));
+        }
+
+        private Person(Name name, EmailAddress email)
         {
             Name = name;
             Email = email;
