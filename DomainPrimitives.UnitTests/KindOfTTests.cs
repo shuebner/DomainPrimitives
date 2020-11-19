@@ -115,6 +115,73 @@ namespace SvSoft.DomainPrimitives
             $"{firstName}".Should().Be("John");
         }
 
+        [Fact]
+        public void OperatorEquals_When_types_are_same_and_underlying_value_is_same_Then_returns_true()
+        {
+            FirstName john1 = new FirstName("John");
+            FirstName john2 = new FirstName("John");
+
+            var isEqual = john1 == john2;
+
+            isEqual.Should().BeTrue();
+        }
+
+        [Fact]
+        public void OperatorEquals_When_types_are_same_and_underlying_values_are_different_Then_returns_false()
+        {
+            FirstName john = new FirstName("John");
+            FirstName jane = new FirstName("Jane");
+
+            var isEqual = john == jane;
+
+            isEqual.Should().BeFalse();
+        }
+
+        [Fact]
+        public void OperatorEquals_When_types_are_different_and_underlying_value_is_same_Then_returns_false()
+        {
+            FirstName john1 = new FirstName("John");
+            LastName john2 = new LastName("John");
+
+            var isEqual = john1 == john2;
+
+            isEqual.Should().BeFalse();
+        }
+
+        [Fact]
+        public void OperatorNotEquals_When_types_are_same_and_underlying_value_is_same_Then_returns_false()
+        {
+            FirstName john1 = new FirstName("John");
+            FirstName john2 = new FirstName("John");
+
+            var isEqual = john1 != john2;
+
+            isEqual.Should().BeFalse();
+        }
+
+        [Fact]
+        public void OperatorNotEquals_When_types_are_same_and_underlying_values_are_different_Then_returns_true()
+        {
+            FirstName john = new FirstName("John");
+            FirstName jane = new FirstName("Jane");
+
+            var isEqual = john != jane;
+
+            isEqual.Should().BeTrue();
+        }
+
+        [Fact]
+        public void OperatorNotEquals_When_types_are_different_and_underlying_value_is_same_Then_returns_true()
+        {
+            FirstName john1 = new FirstName("John");
+            LastName john2 = new LastName("John");
+
+            var isEqual = john1 != john2;
+
+            isEqual.Should().BeTrue();
+        }
+
+
         private class FirstName : KindOf<string>
         {
             public FirstName(string value)
