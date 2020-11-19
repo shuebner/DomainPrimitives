@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DomainPrimitives.Sample\DomainPrimitives.Sample.csproj" />
     <ProjectReference Include="..\DomainPrimitives\DomainPrimitives.csproj" />
   </ItemGroup>
 
