@@ -3,27 +3,27 @@ using System.Diagnostics;
 
 namespace SvSoft.DomainPrimitives
 {
-    [DebuggerDisplay("{value} <{this.GetType().Name,nq}>")]
+    [DebuggerDisplay("{Value} <{this.GetType().Name,nq}>")]
     public abstract class KindOf<T>
     {
-        private readonly T value;
+        public T Value { get; }
 
         protected KindOf(T value)
         {
-            this.value = value ?? throw new ArgumentNullException(nameof(value));
+            this.Value = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         public override bool Equals(object obj) =>
             obj != null &&
             obj.GetType() == GetType() &&
-            Equals(value, ((KindOf<T>)obj).value);
+            Equals(Value, ((KindOf<T>)obj).Value);
 
         public override int GetHashCode() =>
-            HashCode.Combine(GetType(), value);
+            HashCode.Combine(GetType(), Value);
 
-        public override string ToString() => value.ToString();
+        public override string ToString() => Value.ToString();
 
-        public static implicit operator T(KindOf<T> kindOfT) => kindOfT.value;
+        public static implicit operator T(KindOf<T> kindOfT) => kindOfT.Value;
 
         public static bool operator ==(KindOf<T> left, KindOf<T> right) =>
             left is null
