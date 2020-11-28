@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SvSoft.DomainPrimitives
 {
-    public class KindOfTTests
+    public class KindOfTRecordTests
     {
         [Fact]
         public void Can_be_used_as_underlying_type()
@@ -191,7 +191,7 @@ namespace SvSoft.DomainPrimitives
         }
 
 
-        private class FirstName : KindOf<string>
+        private sealed record FirstName : KindOfRecord<string>
         {
             public FirstName(string value)
                 : base(value)
@@ -199,7 +199,7 @@ namespace SvSoft.DomainPrimitives
             }
         }
 
-        private class LastName : KindOf<string>
+        private sealed record LastName : KindOfRecord<string>
         {
             public LastName(string value)
                 : base(value)

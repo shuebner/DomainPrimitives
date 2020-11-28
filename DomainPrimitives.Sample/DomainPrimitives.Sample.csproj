@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>SvSoft.DomainPrimitives.Sample</AssemblyName>
     <RootNamespace>SvSoft.DomainPrimitives.Sample</RootNamespace>
   </PropertyGroup>
