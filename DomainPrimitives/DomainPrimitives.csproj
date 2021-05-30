@@ -8,8 +8,4 @@
     <RootNamespace>SvSoft.DomainPrimitives</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Creation\" />
-  </ItemGroup>
-
 </Project>
