@@ -7,9 +7,9 @@ namespace DomainPrimitives.Sample
 {
     public sealed class Name : KindOfString
     {
-        public static CreationResult<Name> Create(string value)
+        public static Result<Name> Create(string value)
         {
-            return new CreationResult<Name>.Success(new Name(value));
+            return new Name(value);
         }
 
         public Name(string value)

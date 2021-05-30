@@ -8,9 +8,9 @@ namespace DomainPrimitives.Sample
 {
     public sealed class EmailAddress : KindOfString
     {
-        public static CreationResult<EmailAddress> Create(string emailAddress)
+        public static Result<EmailAddress> Create(string emailAddress)
         {
-            return new CreationResult<EmailAddress>.Success(new EmailAddress(emailAddress));
+            return new EmailAddress(emailAddress);
         }
 
         public EmailAddress(string value)

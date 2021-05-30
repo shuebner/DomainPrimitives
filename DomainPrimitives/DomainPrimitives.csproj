@@ -3,8 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
     <AssemblyName>SvSoft.DomainPrimitives</AssemblyName>
     <RootNamespace>SvSoft.DomainPrimitives</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Creation\" />
+  </ItemGroup>
 
 </Project>

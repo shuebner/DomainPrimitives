@@ -1,10 +1,12 @@
-﻿namespace DomainPrimitives.Sample
+﻿using SvSoft.DomainPrimitives;
+
+namespace DomainPrimitives.Sample
 {
     public class Person
     {
-        public static CreationResult<Person> Create(Name name, EmailAddress emailAddress)
+        public static Result<Person> Create(Name name, EmailAddress emailAddress)
         {
-            return new CreationResult<Person>.Success(new Person(name, emailAddress));
+            return new Person(name, emailAddress);
         }
 
         private Person(Name name, EmailAddress email)
